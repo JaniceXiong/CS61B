@@ -13,7 +13,7 @@ public class Body{
         this.xxVel = xV;
         this.yyVel = yV;
         this.mass = m;
-        this.imgFileName = img;
+        this.imgFileName = "./images/"+img;
     }
 
     public Body(Body b){
@@ -78,5 +78,11 @@ public class Body{
         this.yyVel += dt * ay;
         this.xxPos += dt * this.xxVel;
         this.yyPos += dt * this.yyVel;
+    }
+
+    //存疑
+    public void draw(){
+        StdDraw.picture(this.xxPos, this.yyPos, this.imgFileName);
+		//StdDraw.show();
     }
 }
